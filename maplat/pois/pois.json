@@ -1,0 +1,33 @@
+{
+    "main": {
+      "pois": [
+        {
+          "id": "孤山堂無外＿函館公園",
+          "lat": 41.7563506,
+          "lng": 140.7158338,
+          "name": "孤山堂無外",
+          "url":"http://www.zaidan-hakodate.com/jimbutsu/02_ka/02-kosandou.html",
+          "icon": "assets/images/9ac6d81f417d6a5626b7c8d5a087c32b.png",
+          "selected_icon": "assets/images/f115726e6249018905cca51653e1262c.png"
+        },
+        {
+          "id": "若山惣太郎_八幡坂",
+          "lat": 41.7657415,
+          "lng": 140.7138585,
+          "name": "若山惣太郎",
+          "url":"http://www.zaidan-hakodate.com/jimbutsu/10_wa/10-wakayamasou.html",
+          "icon": "assets/images/9ac6d81f417d6a5626b7c8d5a087c32b.png",
+          "selected_icon": "assets/images/f115726e6249018905cca51653e1262c.png"
+        },
+        {
+          "id": "村木甚三郎_高龍寺",
+          "lat": 41.7687188,
+          "lng": 140.7001458,
+          "name": "村木甚三郎",
+          "url":"http://www.zaidan-hakodate.com/jimbutsu/07_ma/07-murakiji.html",
+          "icon": "assets/images/9ac6d81f417d6a5626b7c8d5a087c32b.png",
+          "selected_icon": "assets/images/f115726e6249018905cca51653e1262c.png"
+        }
+      ]
+    }
+  }

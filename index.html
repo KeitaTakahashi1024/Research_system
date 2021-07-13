@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <html>
+    <head>
+      <meta charset="UTF-8" />
+      <title>地域教材作成支援システム</title>
+      <link rel="stylesheet" type="text/css" href="./css/index.css" />
+    </head>
+    <body>
+      <header>
+          <p style = "text-align: center;">
+            <font color = "white">
+                地域教材作成支援システム
+            </font>
+        </p>
+      </header>
+      <main>
+        <div class = "search_area">
+          <form class = "search_box">
+            <input type="text" id="input_text" value="" placeholder="キーワードを入力してください" class="searchBox" onkeyup="checkSearchBoxText(value)"/>
+          </form>
+        </div>
+        <div class= "checkbox_area ">
+            <input type="checkbox" id="jinbutsu" value="false" onchange="isCheckBox(value, id)"/>函館ゆかりの人物伝
+            <input type="checkbox" id="shishi" value="false" onchange="isCheckBox(value, id)" />函館市史デジタル版
+            <input type="checkbox" id="webmap" value="false" onchange="isCheckBox(value, id)" />南北海道の文化財
+            <input type="checkbox" id="digital" value="false" onchange="isCheckBox(value, id)" />デジタル資料館
+        </div>
+        <section class="card_main" id="card_main">
+          <div class="card">
+              <div class="card-parts">
+                <img id="card-image" src="./images/no_image.png">
+              <div class="card-content">
+                <p class="card-title" id="title_0" onclick="clickButton(id)"></p>
+                <p class="card-text" id="text_0" onclick="clickButton(id)"></p>
+              </div>
+              </div>
+          </div>
+        </section>
+      <p id="error">検索結果はありません</p>
+        </main>
+        <script type="text/javascript" src="./js/app.js"></script>
+    </body>
+  </html>
+</html>

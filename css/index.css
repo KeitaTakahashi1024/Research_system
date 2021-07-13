@@ -1,0 +1,98 @@
+@charset "utf-8";
+
+body {
+  margin: 0px;
+}
+
+header {
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    height: 8%;
+    background-color: #2196F3;
+}
+
+main {
+    margin-top: 7%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+ .searchBox {
+    width              : 94%;            /* inputの幅           */
+    height             : 30px;
+    background-image   : url(s30G.png);  /* 背景画像：虫眼鏡(*1)*/
+    background-repeat  : no-repeat;        /* 背景は繰り返さない  */
+    background-position: 8px center;       /* 背景の位置          */
+    background-size    : auto 60%;         /* 背景のサイズ        */
+    background-color   : #fff;             /* 背景色              */
+    margin             : 0 auto;           /* サンプルは中央寄せ  */
+    padding-left       : 2%;             /* 虫眼鏡分の左余白    */
+    padding-right      : 2%;
+    border             : 2px solid #666;   /* 枠線　幅,実践,色    */
+    border-radius      : 6px;              /* 角丸                */
+    color              : #555;             /* 文字色              */
+    font-size          : 20px;             /* フォントサイズ      */
+    letter-spacing     : 0.1em;            /* 文字間隔            */
+    font-weight        : bold;             /* 太字                */
+    outline            : 0;                /* 入力薄枠を非表示    */
+  }
+
+   /* === テキスト入力欄にフォーカスか来たとき ================== */
+  .searchBox:focus {
+    background-color     : #cfe7ff;        /* フォーカス時背景色  */
+  }
+
+   /* === IEの入力エリア右側×消し ============================== */
+  .searchBox::-ms-clear {
+    display        : none;                 /* ×を消す            */
+  }
+
+  .checkbox_area {
+      margin-top: 1%;
+  }
+
+  .card_main{
+    display        : none;
+  }
+
+  .card {
+    overflow: hidden;
+    width: 94%;
+    height: 200px;
+    margin: 1%;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px #ccc;
+  }
+  .card-parts img{
+      padding: 1%;
+      float: left;
+      object-fit: cover;
+      height: auto;
+      width: 15%;
+  }
+  .card-content {
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+  .card-title {
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+
+  }
+  .card-text {
+    color: #777;
+    font-size: 14px;
+    line-height: 150%;
+    cursor: pointer;
+
+  }
+  .card_button {
+    color: #FFFFFF;
+  }
+
+  #error {
+    display        : none;
+  }

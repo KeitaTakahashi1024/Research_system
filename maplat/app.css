@@ -1,0 +1,60 @@
+﻿header {
+  position: fixed;
+  top: 0px;
+  width: 100vw;
+  height: 8%;
+  background-color: #2196F3;
+}
+
+.main {
+  display: inline-block;
+}
+
+
+.mainview {
+  position: absolute;
+  width: 50%;
+  top: 12%;
+  bottom: 5%;
+  left: 5%;
+}
+
+.word {
+  position: absolute;
+  left: 58%;
+  top: 12%;
+  margin-right: 3%;
+  height: 50%;
+  overflow: scroll;
+  line-height: 150%;
+  color:#333333;
+  background: #FFF;
+  border: solid 2px #6091d3;/*線*/
+  border-radius: 10px;/*角の丸み*/
+  padding-right: 1%;
+  padding-left: 1%;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  color:#333333;
+}
+.text {
+  overflow-y: scroll;
+  text-overflow: ellipsis;
+  line-height: 150%;
+  color:#333333;
+}
+
+.relative {
+  position: absolute;
+  top: 65%;
+  left: 58%;
+  margin-right: 3%;
+}
+
+.relative_title {
+  font-size: 20px;
+  font-weight: bold;
+}
