@@ -47,6 +47,10 @@
   color:#333333;
 }
 
+#location_word {
+  border-bottom: solid 2px red;
+}
+
 .relative {
   position: absolute;
   top: 65%;

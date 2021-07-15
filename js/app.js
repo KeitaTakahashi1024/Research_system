@@ -127,6 +127,7 @@ async function postJson (data){
         var _json = JSON.parse(JSON.stringify(result));
         jsonData = _json;
         var _json_length = _json.length;
+        //createJson();
 
         var _card_parent = document.getElementById('card_main');
         var _card_child = document.querySelectorAll('.card');
@@ -214,4 +215,18 @@ function clickButton(id) {
     localStorage.setItem("first", JSON.stringify(_list));
     localStorage.setItem("all", JSON.stringify(jsonData));
     location.href = "http://localhost:5500/maplat/index.html";
+}
+
+function createJson() {
+    const fs = require("fs");
+
+    // 書き込むデータ準備
+    const data = "Hello Node";
+
+    // 書き込み
+    fs.writeFile("file1.txt", data, (err) => {
+    if (err) throw err;
+    console.log('正常に書き込みが完了しました');
+    });
+
 }
