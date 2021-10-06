@@ -47,6 +47,13 @@
   color:#333333;
 }
 
+#under_line {
+  font-weight: bolder;
+  text-decoration: underline;
+  color: rgb(63, 85, 156);
+}
+
+
 #location_word {
   border-bottom: solid 2px red;
 }

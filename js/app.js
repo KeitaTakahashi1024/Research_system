@@ -183,8 +183,9 @@ async function postJson (data){
             _card_title[i].textContent = _json[i].title;
             _card_title[i].id = "title_" + i.toString();
             // 資料の説明文を入力する
-            _card_description[i].textContent = _json[i].description;
+            _card_description[i].innerHTML = _json[i].description;
             _card_description[i].id = "text_" + i.toString();
+            
 
             // 資料の画像を入力する
             // 画像のURLがない場合は、no_imageの画像にする
@@ -195,7 +196,6 @@ async function postJson (data){
                 _card_image[i].src = _json[i].img;
             }
         }
-        console.log(_json)
 
         // エラーハンドリング
     }).catch((error) => {
@@ -209,24 +209,10 @@ function clickButton(id) {
     // 要素の中で、説明文を表示する部分を全て取得
     var _card_description = document.querySelectorAll('.card-text');
     _index = id.replace(/[^0-9]/g, '');
-    var _list = [_card_title[_index].textContent, _card_description[_index].textContent];
+    var _list = [_card_title[_index].textContent, _card_description[_index].innerHTML];
     console.log(postInfo);
     localStorage.setItem("search", JSON.stringify(postInfo));
     localStorage.setItem("first", JSON.stringify(_list));
-    localStorage.setItem("all", JSON.stringify(jsonData));
+    localStorage.setItem("all", JSON.stringify(jsonData[_index]));
     location.href = "http://localhost:5500/maplat/index.html";
-}
-
-function createJson() {
-    const fs = require("fs");
-
-    // 書き込むデータ準備
-    const data = "Hello Node";
-
-    // 書き込み
-    fs.writeFile("file1.txt", data, (err) => {
-    if (err) throw err;
-    console.log('正常に書き込みが完了しました');
-    });
-
 }

@@ -1,9 +1,10 @@
-﻿console.log(localStorage.length);
+﻿
 var data1 = JSON.parse(localStorage.getItem("first"));
-console.log(data1);
 
 var data2 = localStorage.getItem("all");
-console.log(JSON.parse(data2));
+
+var choumei_list = [];
+
 
 localStorage.removeItem('first');
 localStorage.removeItem('all');
@@ -15,7 +16,8 @@ _title.textContent = data1[0];
 
 // 要素の中で、説明文を表示する部分を全て取得
 var _text = document.querySelector('.text');
-_text.textContent = data1[1];
+_text.innerHTML = data1[1];
+
 
 
 var option = {
@@ -37,35 +39,34 @@ Maplat.createObject(option).then(function (app) {
   window.setTimeout(function () {
     app.core.setViewpoint(viewpoint);
     app.core.setTransparency(ratio);
-    console.log("読んだ？");
-
-    location_data = JSON.parse(data2);
-    console.log(location_data[0].places);
-
-    for(var i = 0 ;i < location_data.length; i++) {
-      if(location_data[i].places.length > 0) {
-        for(var j = 0; j < location_data[i].places.length; j++) {
-          app.core.addMarker({
-            "id": location_data[i].places[j].id,
-            "lat": location_data[i].places[j].lat,
-            "lng": location_data[i].places[j].lng,
-            "name": location_data[i].places[j].id,
-            "desc": location_data[i].places[j].id,
-            "image": location_data[i].imageUrl,
-            "icon": "assets/images/9ac6d81f417d6a5626b7c8d5a087c32b.png",
-            "selected_icon": "assets/images/f115726e6249018905cca51653e1262c.png"
-          },"main");
-        }
-      }
-    }
-    console.log("追加した");
   }, 1);
 
-  //ボタンで地図を切り替え
-  document.getElementById("osm").addEventListener("click", function (e) {
-    app.core.changeMap("osm");
-  });
-  document.getElementById("hakodate_1878").addEventListener("click", function (e) {
-    app.core.changeMap("hakodate_1878");
-  });
+  location_data = JSON.parse(data2);
+  console.log(location_data);
+  var choumei_list = [];
+  var under_lines = document.querySelectorAll('#under_line');
+  for(let i = 0; i < under_lines.length; i++) {
+    choumei_list.push(under_lines[i].textContent);
+    under_lines[i].addEventListener('click',function(e){
+    alert(choumei_list[i]);
+      for(let j = 0; j < location_data.places.length; j++) {
+        if(choumei_list[i] == location_data.places[j].name) {
+          //var name = location_data.places[j].name;
+          //alert(name);
+          app.core.clearMarker("main");
+          var data = {
+            "id": location_data.places[j].id,
+            "lat": location_data.places[j].lat,
+            "lng": location_data.places[j].lng,
+            "name": location_data.places[j].name,
+            "desc": location_data.places[j].name,
+            "image": location_data.img,
+            "icon": "assets/images/9ac6d81f417d6a5626b7c8d5a087c32b.png",
+            "selected_icon": "assets/images/f115726e6249018905cca51653e1262c.png"
+          };
+          app.core.addMarker(data, "main");
+        }
+      }
+    });
+  }
 });
